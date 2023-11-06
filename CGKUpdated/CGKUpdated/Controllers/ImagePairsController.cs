@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using CGKUpdated.Data;
 using CGKUpdated.Models;
 using System.Drawing;
-using CGKProject.Models;
 using System.Drawing.Imaging;
+using CGKUpdated.Models.Filters;
 
 namespace CGKUpdated.Controllers
 {
@@ -51,6 +51,8 @@ namespace CGKUpdated.Controllers
         // GET: ImagePairs/Create
         public IActionResult Create()
         {
+            ViewBag.filters = new SelectList(FilterMap.filters.Keys);
+
             return View();
         }
 
@@ -76,7 +78,7 @@ namespace CGKUpdated.Controllers
                 origStream = new FileStream(origPath, FileMode.Open, FileAccess.ReadWrite);
 
                 Bitmap gradMap = new Bitmap(origStream);
-                Gradient.GenGradient(gradMap);
+                FilterMap.filters[imagePairView.filter].ApplyFilter(gradMap);
                 gradMap.Save(gradPath, ImageFormat.Jpeg);
                 
                 origStream.Close();

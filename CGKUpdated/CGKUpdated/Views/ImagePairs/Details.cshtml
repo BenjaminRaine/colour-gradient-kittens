@@ -10,6 +10,12 @@
     <h4>ImagePair</h4>
     <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.title)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.user)
         </dt>
@@ -21,6 +27,18 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.addedAt)
+        </dd>
+        <dt class="col-sm-2">
+            original
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/pairs/original/@(Model?.title).jpg" width="90%" height="auto" border="1" />
+        </dd>
+        <dt class="col-sm-2">
+            alternate
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/pairs/gradient/@(Model?.title).jpg" width="90%" height="auto" border="1" />
         </dd>
     </dl>
 </div>

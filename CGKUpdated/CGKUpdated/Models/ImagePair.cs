@@ -1,6 +1,6 @@
 ﻿//THIS -> https://www.youtube.com/watch?v=bqyZiwXOMH0
 
-using CGKProject.Models;
+using CGKUpdated.Models;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;

@@ -1,4 +1,5 @@
-﻿using CGKProject.Models;
+﻿using CGKUpdated.Models;
+using CGKUpdated.Models.Filters;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -14,7 +15,7 @@ namespace CGKUpdated.Models
         [Key]
         public string title { get; set; }
         public string user { get; set; }
-
+        public string filter { get; set; }
         public IFormFile original { get; set; }
 
         public ImagePairViewModel()
