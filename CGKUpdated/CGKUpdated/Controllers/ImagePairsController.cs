@@ -94,57 +94,6 @@ namespace CGKUpdated.Controllers
             return View(pair);
         }
 
-        // GET: ImagePairs/Edit/5
-        public async Task<IActionResult> Edit(string id)
-        {
-            if (id == null || _context.ImagePair == null)
-            {
-                return NotFound();
-            }
-
-            var imagePair = await _context.ImagePair.FindAsync(id);
-            if (imagePair == null)
-            {
-                return NotFound();
-            }
-            return View(imagePair);
-        }
-
-        // POST: ImagePairs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("title,user,addedAt")] ImagePair imagePair)
-        {
-            if (id != imagePair.title)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(imagePair);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ImagePairExists(imagePair.title))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(imagePair);
-        }
-
         // GET: ImagePairs/Delete/5
         public async Task<IActionResult> Delete(string id)
         {

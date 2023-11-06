@@ -13,12 +13,8 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
-    <a asp-controller="ImagePairs" asp-action="Create">
-		<input type="button" value="Create" class="button" />
-    </a>
-    <a asp-controller="ImagePairs" asp-action="Index">
-		<input type="button" value="Browse" class="button" />
-    </a>
+    <a asp-controller="ImagePairs" asp-action="Create"><input type="button" value="Create" class="button"/></a>
+    <a asp-controller="ImagePairs" asp-action="Index"><input type="button" value="Browse" class="button"/></a>
     <!--
     <a asp-controller="ImagePairs" asp-action="/Details/...">
 		<input type="button" value="Random" class="button" />
@@ -26,7 +22,12 @@
     -->
 </div>
 
+
 <style>
+    .a {
+        top: 100px;
+    }
+
     .button {
         position: relative;
         display: inline-block;
@@ -37,13 +38,13 @@
         padding: 12px 24px;
         border: 0;
         color: #000021;
-        background: #1de9b6;
+        background: #fe5bac;
         line-height: 1.15;
         font-size: 16px;
     }
 
     button:hover {
         transition: all .1s ease;
-        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #fe5bac;
     }
 </style>
